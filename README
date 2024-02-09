@@ -1,0 +1,35 @@
+README for CS 265 LSM Tree Implementation 
+------------------------------
+
+AUTHOR: Lulu Li
+
+
+INSTALL
+------------------------------
+To compile: 
+	make 
+
+To run:
+	./concurrent_main NUMBER_OF_RECORDS DELETE_FREQ READ_FREQ SKEW_WRITE SKEW_READ
+
+	NUMBER_OF_RECORDS	number of records generated
+	DELETE_FREQ		probability of delete in records generated, range 0 to 100 percent. 0: no delete. 100: all delete
+	FREQ			read delay, range 0-6. 0: no read. 1: 1 sec delay. 2: 0.1 second delay ... 6: 1 microsecond delay
+	SKEW_WRITE		ignore, not a tunable parameter in this implementation 
+	SKEW_READ		ignore, not a tunable parameter in this implementation
+
+	for example: run 10 million records with probability of 10% delete, with a delay of 1 microsecond 
+		./concurrent_main 10000000 10 6 0 0	
+
+To remove: 
+	make clean
+
+
+NOTES
+------------------------------ 
+Folder description
+	level
+		contains LSM levels in disk
+
+
+
